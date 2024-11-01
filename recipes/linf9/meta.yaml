@@ -1,0 +1,31 @@
+package:
+  name: linf9
+  version: 1.0
+
+source:
+  url: https://raw.githubusercontent.com/cyangNYU/Lin_F9_test/993ae9b7fe37e95be9f960aeedfbf57a40293239/smina.static
+  sha256: 01aa01529b1bef4141eac8420762d556f669fe635b59db23c2a2143b59dd0420
+  fn: linf9
+build:
+  number: 0
+  skip: true  # [not linux]
+
+requirements:
+    build:
+        - tar
+
+test:
+  commands:
+    - linf9 --help
+
+about:
+  home: https://github.com/cyangNYU/Lin_F9_test
+  license: GPL-3.0
+  summary: Lin_F9 is a linear empirical scoring function for protein-ligand docking.
+  description: Lin_F9 is a linear empirical scoring function for protein-ligand docking.
+  doc_url: https://github.com/cyangNYU/Lin_F9_test
+  dev_url: https://github.com/cyangNYU/Lin_F9_test
+  
+extra:
+  recipe-maintainers:
+    - Tonylac77
