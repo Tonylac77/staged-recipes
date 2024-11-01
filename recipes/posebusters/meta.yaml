@@ -41,7 +41,7 @@ about:
   summary: 'PoseBusters: Plausibility checks for generated molecule poses.'
   dev_url: https://github.com/maabuu/posebusters/
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
