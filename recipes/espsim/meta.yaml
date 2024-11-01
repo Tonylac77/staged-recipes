@@ -11,15 +11,26 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.9
     - pip
+    - setuptools
   run:
-    - python
+    - python >=3.9
+    - conda-forge::rdkit
+    - numpy
+    - scipy
+    - joblib
+    - scikit-learn
+    - conda-forge::py3dmol
+    - psi4::psi4
+    - psi4::resp 
+    - tqdm
+    - pytorch::pytorch
 
 test:
   imports:
