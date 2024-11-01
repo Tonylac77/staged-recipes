@@ -1,0 +1,44 @@
+{% set name = "spyrmsd" %}
+{% set version = "0.8.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spyrmsd-{{ version }}.tar.gz
+  sha256: 401681c5338c06215321c7c3960ca28f22b575118478b7dec6f28b8823b58924
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python >=3.9
+    - flit-core >=2,<4
+    - pip
+  run:
+    - python >=3.9
+    - numpy
+    - scipy
+    - rustworkx
+
+test:
+  imports:
+    - spyrmsd
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://spyrmsd.readthedocs.io
+  summary: Python RMSD tool with symmetry correction.
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - Tonylac77
