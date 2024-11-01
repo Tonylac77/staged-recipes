@@ -1,0 +1,36 @@
+package:
+  name: rfscorevs
+  version: 1.0
+
+source:
+  - url: https://github.com/oddt/rfscorevs_binary/releases/download/1.0/rf-score-vs_v1.0_linux_2.7.zip  # [linux]
+    sha256: 6ec07ec7afad72348ca28a944ffa19115e67be53543b6f303653f984916ea038  # [linux]
+  - url: https://github.com/oddt/rfscorevs_binary/releases/download/1.0/rf-score-vs_v1.0_osx_2.7.zip  # [osx]
+    sha256: 6fc80a35fe9f6065c23979cee33a75327974869d681b43bb9e63c6304aea80b3  # [osx]
+  - url: https://github.com/oddt/rfscorevs_binary/releases/download/1.0/rf-score-vs_v1.0_win_2.7.zip  # [win]
+    sha256: 24fd89dfd4403e64285fbd3f8cbb76c5de8623dd5355f0b21c615b6ea25e1446  # [win]
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - tar
+    - unzip
+
+test:
+  commands:
+    - rf-score-vs --help  # [unix]
+    - rf-score-vs.exe --help  # [win]
+
+about:
+  home: https://github.com/oddt/rfscorevs_binary
+  license: BSD 3-Clause License
+  summary: RF-Score-VS is a novel Random Forest-based scoring function for Virtual Screening which predicts binding affinity.
+  description: RF-Score-VS is a novel Random Forest-based scoring function for Virtual Screening which predicts binding affinity.
+  doc_url: https://github.com/oddt/rfscorevs_binary
+  dev_url: https://github.com/oddt/rfscorevs_binary
+
+extra:
+  recipe-maintainers:
+    - Tonylac77
