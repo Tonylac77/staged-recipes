@@ -1,0 +1,48 @@
+{% set name = "posebusters" %}
+{% set version = "0.3.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/posebusters-{{ version }}.tar.gz
+  sha256: fcfc184b4e2b39f154202fd899cbb7c38687f058198869f5318a936df58a9e0d
+
+build:
+  entry_points:
+    - bust = posebusters.cli:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
+    - pip
+  run:
+    - python >=3.8
+    - rdkit >=2020.09
+    - pandas
+    - numpy
+    - pyyaml
+
+test:
+  imports:
+    - posebusters
+  commands:
+    - pip check
+    - bust --help
+  requires:
+    - pip
+
+about:
+  summary: 'PoseBusters: Plausibility checks for generated molecule poses.'
+  dev_url: https://github.com/maabuu/posebusters/
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - Tonylac77
