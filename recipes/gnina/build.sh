@@ -8,5 +8,5 @@ mkdir -p $PREFIX/bin
 cd $SRC_DIR
 
 # Copy the executable to the conda environment's bin directory
-cp rdpsovina $PREFIX/bin/
-chmod +x $PREFIX/bin/rdpsovina
+cp gnina $PREFIX/bin/
+chmod +x $PREFIX/bin/gnina
