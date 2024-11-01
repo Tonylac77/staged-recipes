@@ -1,0 +1,28 @@
+package:
+  name: rdpsovina
+  version: 1.0
+
+source:
+  url: https://raw.githubusercontent.com/li-jin-xing/RDPSOVina/d21b9a9fadd02aeb0b7c47e7203e8e4a4fea3461/binary/Ubuntu-15.04/psovina
+  sha256: cdbaa67480c4341c7100c13cec46b1ad6c34441a09601c1938c2906a53420938
+  fn: rdpsovina
+
+build:
+  number: 0
+  skip: true  # [not linux]
+
+test:
+  commands:
+    - rdpsovina --help
+
+about:
+  home: https://github.com/li-jin-xing/RDPSOVina
+  license: None
+  summary: A fast docking tool with the random drift particle swarm optimization and based on the framework of AutoDock Vina and PSOVina
+  description: A fast docking tool with the random drift particle swarm optimization and based on the framework of AutoDock Vina and PSOVina
+  doc_url: https://github.com/li-jin-xing/RDPSOVina
+  dev_url: https://github.com/li-jin-xing/RDPSOVina
+  
+extra:
+  recipe-maintainers:
+    - Tonylac77
