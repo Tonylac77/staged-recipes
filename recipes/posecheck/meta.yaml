@@ -1,0 +1,48 @@
+{% set name = "posecheck" %}
+{% set version = "1.3.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/posecheck-{{ version }}.tar.gz
+  sha256: 9385d3c27f5a0fadfb8acbb556219af5963012378f2ed4783d8cdb7a3a401474
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - conda-forge::rdkit
+    - prolif
+    - datamol
+    - hydride
+    - biopython
+    - pandas >=2.0.0
+    - seaborn
+    - matplotlib-base
+    - numpy
+
+test:
+  imports:
+    - posecheck
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: A library for benchmarking poses of 3D SBDD models
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - Tonylac77
