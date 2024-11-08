@@ -20,9 +20,9 @@ requirements:
     - pip
   run:
     - python
-    - conda-forge::rdkit
-    - prolif
-    - datamol
+    - rdkit
+    - conda-forge::prolif
+    - conda-forge::datamol
     - hydride
     - biopython
     - pandas >=2.0.0
